@@ -1,8 +1,7 @@
 # Processes ETL for Cryptocurencies market Analysis
 
 ## Overview
-this project ...
-
+This is a Business Intelligence (BI) project that involves creating a real-time ETL (Extract, Transform, Load) process. The project extracts Crypto Market Data from multiple sources, loads it into a staging area (MySQL), transforms it using Python, and then loads the transformed data into Data Warehouses (Snowflake and Hive). Finally, the project visualizes the collected data through interactive Dashboards built using Power BI and Streamlit.
 ---
 
 ## 📂 Repository Structure
@@ -34,25 +33,24 @@ this project ...
 ---
 
 ## Used Technologies
+![Architecture](images/architecture.jpg)
 The project leverages the following technologies:
 
-- ![hive](https://img.shields.io/badge..)
-- ![snowflake](https://img.shields.io/badge..)
-- ![MYSQL](https://img.shields.io/badge..)
-- ![pandas](https://img.shields.io/badge..)
-- ![streamlit](https://img.shields.io/badge..)
-- ![power bi](https://img.shields.io/badge..)
-- ![python](https://img.shields.io/badge..)
+- ![Hive](https://img.shields.io/badge/Apache%20Hive-FDEE21?logo=apachehive&logoColor=black&style=flat-square)
+- ![Snowflake](https://img.shields.io/badge/Snowflake-29B5E8?logo=snowflake&logoColor=white&style=flat-square)
+- ![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white&style=flat-square)
+- ![Pandas](https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=white&style=flat-square)
+- ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white&style=flat-square)
+- ![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?logo=powerbi&logoColor=black&style=flat-square)
+- ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white&style=flat-square)
 
 
 ---
-
 
 ## Collaboration
 This project was created in collaboration with **[Anouar Bouzhar](https://github.com/anouarbouzhar)**.
 
 ---
-
 ## 🚀 Using the Project
 to use the project get the API from website as shown in the architecture images and create a .env file where you need to provide the connection informations and APIs
 as follow : 
@@ -73,38 +71,68 @@ SQLpassword=''
 SQLdatabase=''
 
 blockchainAPI = '' # CoinmarketCap 
-exchange_rateAPI = '' # 
-crypto_pricesAPI = '' # 
+exchange_rateAPI = '' # coingecko
+crypto_pricesAPI = '' # cryptocompare
 newsAPI = '' # news
 XTOKEN = '' # X
 
 ```
-### websites link : 
-- ![NEWS](https://newsapi.org/)
-- ![X](https://developer.x.com/en)
-- ![MYSQL](https://pro.coinmarketcap.com/api/v1/#)
-- ![CoinMarketCap](https://img.shields.io/badge..)
-- ![binance](https://www.binance.com/fr/binance-api)
-- ![coingecko](https://www.coingecko.com/en/api)
-- ![cryptocompare](https://min-api.cryptocompare.com/)
+### Websites Links
+
+Click on the logos to visit the websites:
+
+<a href="https://newsapi.org/" target="_blank">
+  <img src="https://img.shields.io/badge/NEWS-NewsAPI-blue?logo=newspaper&style=for-the-badge" alt="NewsAPI">
+</a>
+
+<a href="https://developer.x.com/en" target="_blank">
+  <img src="https://img.shields.io/badge/X-Twitter%20API-black?logo=twitter&style=for-the-badge" alt="X (Twitter) API">
+</a>
+
+<a href="https://pro.coinmarketcap.com/api/v1/#" target="_blank">
+  <img src="https://img.shields.io/badge/CoinMarketCap-API-blue?logo=bitcoin&style=for-the-badge" alt="CoinMarketCap API">
+</a>
+
+<a href="https://www.binance.com/fr/binance-api" target="_blank">
+  <img src="https://img.shields.io/badge/Binance-API-yellow?logo=binance&style=for-the-badge" alt="Binance API">
+</a>
+
+<a href="https://www.coingecko.com/en/api" target="_blank">
+  <img src="https://img.shields.io/badge/CoinGecko-API-blue?logo=coingecko&style=for-the-badge" alt="CoinGecko API">
+</a>
+
+<a href="https://min-api.cryptocompare.com/" target="_blank">
+  <img src="https://img.shields.io/badge/CryptoCompare-API-blue?logo=cryptocompare&style=for-the-badge" alt="CryptoCompare API">
+</a>
 
 1. Clone the repository:
 ```bash
-   git clone [repo]
+   git clone https://github.com/Elkholtihm/ETL-for-crypto-market-analysis.git
 ```
 
 2. Install the required packages:
 ```bash
-  pip install ultralytics
-  pip install opencv-python requests matplotlib
+  pip install -r requirements.txt
 ```
 
-3. Navigate to the code directory:
+3. Navigate to the CODE directory:
 ```bash
-  cd code
+  cd CODE
 ```
-
-4. Navigate to the code directory:
+4. create mysql database and data warehouse schema:
 ```bash
-  python FraudSender.py
+  python sql.py
+  python hive.py
+```
+  OR
+```bash
+  python snowflake.py
+```
+5. To extract data from APIs:
+```bash
+  cd streaming && python etl.py
+```
+6. To extract from MYSQL, transform and load to Data warehouse
+```bash
+  cd ETL && python data_ingestor.py
 ```

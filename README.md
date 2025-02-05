@@ -19,7 +19,6 @@ This is a Business Intelligence (BI) project that involves creating a real-time 
 ### CODE/
 ```  
 ├── ETL/  
-│   ├── 
 │   ├── etl.py                  # script that use functions and connect to database used and manage the workflow
 │   ├── load.py                 # functions to load to data warehouse
 │   └── extract_transform.py    # conatins functions to extract from MYSQL and transform to data warehouse format

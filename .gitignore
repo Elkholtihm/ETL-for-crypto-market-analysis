@@ -1,0 +1,7 @@
+.env
+.git
+code/ETL/__pycache__
+code/streaming/coins_data/__pycache__
+code/streaming/economic_data/__pycache__
+code/streaming/tweets_news/__pycache__
+myenv/

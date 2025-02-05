@@ -2,6 +2,7 @@
 
 ## Overview
 This is a Business Intelligence (BI) project that involves creating a real-time ETL (Extract, Transform, Load) process. The project extracts Crypto Market Data from multiple sources, loads it into a staging area (MySQL), transforms it using Python, and then loads the transformed data into Data Warehouses (Snowflake and Hive). Finally, the project visualizes the collected data through interactive Dashboards built using Power BI and Streamlit.
+
 ---
 
 ## 📂 Repository Structure
